@@ -16,17 +16,19 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
-//        model.addAttribute("posts", null);
+        model.addAttribute("posts", null);
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
         return "index";
     }
 
-//    @GetMapping("/posts/save")
-//    public String postsSave() {
-//        return "posts-save";
-//    }
+
+
+    @GetMapping("/posts/save")
+    public String postsSave() {
+        return "posts-save";
+    }
 
 //    @GetMapping("/posts/update/{id}")
 //    public String postsUpdate(@PathVariable Long id, Model model) {
