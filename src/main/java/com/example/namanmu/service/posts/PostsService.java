@@ -2,6 +2,7 @@ package com.example.namanmu.service.posts;
 //
 import com.example.namanmu.domain.posts.Posts;
 import com.example.namanmu.domain.posts.PostsRepository;
+import com.example.namanmu.web.dto.PostsListResponseDto;
 import com.example.namanmu.web.dto.PostsResponseDto;
 import com.example.namanmu.web.dto.PostsSaveRequestDto;
 import com.example.namanmu.web.dto.PostsUpdateRequestDto;
@@ -48,12 +49,12 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 
-//    @Transactional(readOnly = true)
-//    public List<PostsListResponseDto> findAllDesc() {
-//        return postsRepository.findAllDesc().stream()
-//                .map(PostsListResponseDto::new)
-//                .collect(Collectors.toList());
-//    }
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 
 
 
